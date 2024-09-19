@@ -1,0 +1,16 @@
+import math
+from fractions import Fraction
+
+angulo = float(input('Digite o valor do ângulo em graus: '))
+radianos = math.radians(angulo)
+
+# Calculate the fraction of pi
+frac = Fraction(radianos / math.pi).limit_denominator()
+
+# Print the result
+if frac.numerator == 0:
+  print('O ângulo em radianos é: 0')
+elif frac.denominator == 1:
+  print(f'O ângulo em radianos é: {frac.numerator}π')
+else:
+  print(f'O ângulo em radianos é: {frac.numerator}/{frac.denominator}π')
